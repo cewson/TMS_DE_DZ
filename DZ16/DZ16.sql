@@ -39,7 +39,7 @@ VALUES
 create table promocodes (
 	promo_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	code TEXT UNIQUE,
-	discount_percent INTEGER,
+	discount_percent INTEGER CHECK(discount_percent >0 AND discount_percent < 100),
 	valid_from TEXT,
 	valid_to TEXT,
 	max_uses INTEGER,
